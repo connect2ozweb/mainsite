@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <!--Start Blog section--> 
+  <div class="blogSection">
+    <h1>Latest <span class="yellow">Blog</span></h1>
+    <style>
+    .chpcs_foo_content img {
+      max-width: 960;
+    }
+
+    .chpcs_image_carousel .chpcs_prev, .chpcs_image_carousel .chpcs_next{
+      background: rgba(195, 195, 195, 0.01);
+      color: rgb(0, 0, 0);
+      font-size: 32px;
+      line-height: 39px;
+      width: 42px;
+      height: 42px;
+      margin-top: -32px;
+    }
+
+    .chpcs_image_carousel.chpcs_prev:hover, .chpcs_image_carousel .chpcs_next:hover {
+      color: rgba(248, 175, 2, 0.98);
+    }
+
+    #wa_chpcs_pager a {
+      background: rgba(248, 175, 2, 0.98);
+    }
+
+  </style>
+
+  <div class="chpcs_image_carousel">
+    <div id="wa_chpc_slider" style="height:350px; overflow: hidden;">
+
+      {% for post in site.posts limit:5  %}
+      <div class="chpcs_foo_content" style="width:960px; height:350px;"><h3>
+        <a class="blog_title" href="{{ post.url }}">SEO vs SEM</a></h3>
+        <div class="blogBottom">
+          <div class="calender"><i class="fa fa-calendar"></i>
+            <span> {{ post.date | date: "%b" }} </span>
+            <span class="yellow">{{ post.date | date: "%d" }}</span>
+            <span>, </span>
+            <span class="yellow">{{ post.date | date: "%Y" }}</span>
+          </div>
+          <div class="admin"><i class="fa fa-user"></i>
+            <span class="yellow">{{ post.author | default: "Admin"}}</span>
+          </div>
+        </div>
+         <p>{{ post.content | truncate: 250 | strip_html | strip | strip_newlines }}</p>
+        <div class="readMore"><a href="{{ post.url }}">Read more</a></div>
+      </div>
+       {% endfor %}
+    </div>
+    <div class="chpcs_clearfix">
+    </div>
+    <div class="chpcs_pagination" id="wa_chpcs_pager">
+    </div>
+  </div>         <!-- </div> -->
+  <div class="clear">
+  </div>
+</div> <!--End Blog section--> 
+
+</div>
+<div id="rightMenu">
+</div>
+<div class="clear"></div>
+<br>

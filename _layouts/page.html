@@ -1,0 +1,134 @@
+---
+layout: default
+---
+<div class="innerMiddle">
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+    <div class="innerContent">
+
+        <script src="{{ 'assets/js/jquery-1.11.1.js' | relative_url }}"></script>
+        <style>
+            .mmt_member_img > img {
+                width: 100%;
+            }
+        </style>
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                <header class="entry-header">
+                    <span id="about-us">&nbsp;</span>
+                      	{% assign pageTitleFirstdPart = page.title | truncatewords: 1 , "" %}
+                    	{% assign pageTitleSecondPart = page.title | replace: pageTitleFirstdPart, "" %}
+                    <h1 class="entry-title">
+                    	{{ pageTitleFirstdPart }}<span class="yellow">{{ pageTitleSecondPart }}</span>
+                    </h1>
+                </header>
+                <article id="post-545" class="post type-post status-publish format-standard hentry category-about-us">
+                    <div class="entry-content">
+                      {{ content }}
+                    </div><!-- .entry-content -->
+                </article><!-- #post -->
+                <div class="clear">&nbsp;</div>
+                <hr>
+                <header class="entry-header">
+                    <span id="meet-the-team">&nbsp;</span>
+                    <h1 class="entry-title">Meet The <span class="yellow">Team</span></h1>
+                </header>
+                <article id="post-556"
+                         class="post-556 post type-post status-publish format-standard hentry category-about-us category-uncategorized">
+                    <div class="entry-content">
+                        <div data-debug="false" data-align="center" data-enable-modal="true" class="mmt_container "
+                             id="">
+                            <div class="mmt_row row-fluid">
+                                <div id="mmt_member_562" class="reveal-modal" data_modal_centering="false"
+                                     style="left: 356.5px;">
+                                    <div class="mmt_bio_picture"><img
+                                            src="/assets/uploads/2015/04/fizza.jpg">
+                                    </div>
+                                    <h4>Fizza</h4>
+                                    <h6>Freelancer,Quality Assurance</h6>
+                                    <div><p>10 years of experience in Web-based research, Content management and Editing
+                                        in the corporate arena, Fizza has now scooted into freelancing. She has
+                                        developed technical, creative and travel content for several companies. She is
+                                        currently taking care of our content creation and editing requirements. Having
+                                        an MBA, marketing degree and a Diploma from London school of Journalism has
+                                        helped her invaluably in paving her way into the world of web based content.</p>
+                                        <p>She previously led and managed a team of writers as the Director of Content
+                                            services plus Sr. Content writer and editor at Word Quotient. She also
+                                            worked as a Online Research Analyst with America Online, AOL.</p>
+                                    </div>
+                                    <a class="close-reveal-modal">×</a>
+                                </div>
+                                <div data-reveal-id="mmt_member_562" class="mmt col-mmt-4"
+                                     style="left: 100px; cursor: pointer;">
+                                    <div class="mmt_member_img"><img
+                                            src="/assets/uploads/2015/04/fizza.jpg"
+                                            alt="Fizza"></div>
+                                    <h4>Fizza</h4><h6>Freelancer,Quality Assurance</h6></div>
+                                <div id="mmt_member_572" class="reveal-modal" data_modal_centering="false"
+                                     style="left: 356.5px;">
+                                    <div class="mmt_bio_picture"><img
+                                            src="/assets/uploads/2015/04/sam.jpg">
+                                    </div>
+                                    <h4>Sameen</h4>
+                                    <h6>Content Writer ,Designer</h6>
+                                    <div><p>Gold medallist, high scorer, multi-faceted, efficient and hardworking
+                                        individual with experience in content writing and video editing. My past
+                                        experiences include working as a video editor and script writer for channel31
+                                        Melbourne for over 3 months, filming many forms of media including live
+                                        broadcasts, internet content, educational videos, and much more. I have also
+                                        filmed and edited few news pieces for burn TV, Melbourne. I have been a part of
+                                        connect2ozweb since its natal stage; as its content writer and editor.</p>
+                                        <p>Being a student at Swinburne University I have created several videos that
+                                            have been seen by thousands of viewers over various social media platforms.
+                                            I have worked as a freelancer at various places and for multiple clients
+                                            ranging from interview recordings, educational videos and other material. I
+                                            have also worked as a researcher which I feel has enhanced and honed my
+                                            communication skills. I am passionate about creative arts hence I am
+                                            currently pursuing a course in English Literature to help me be more
+                                            analytical, intense yet detached.</p>
+                                        <p>I am also fond of slogan writing, particularly for Ads and images. I feel a
+                                            tinge of novelty and creativity makes a work stand out. In a world of
+                                            plagiarism, be an author of a work that is not a copy but worth copying.</p>
+                                    </div>
+                                    <a class="close-reveal-modal">×</a>
+                                </div>
+
+
+                                <div data-reveal-id="mmt_member_572" class="mmt col-mmt-4" style="left: 100px; cursor: pointer;">
+                                    <div class="mmt_member_img">
+                                        <img src="{{ '/assets/uploads/2015/04/sam.jpg' | relative_url }}" alt="Sameen"></div>
+                                    <h4>Sameen</h4>
+                                    <h6>Content Writer ,Designer</h6>
+                                </div>
+                            </div>
+                        </div><!-- .entry-content -->
+                    </div>
+                </article><!-- #post -->
+                <div class="clear">&nbsp;</div>
+                <hr>
+            </div><!-- #content -->
+        </div><!-- #primary -->
+
+    </div><!--End Inner Middle section-->
+    <div id="rightMenu">
+    	<ul class="rightMenu">
+    		{% for site-menu in page.menu %}
+    		<li class="page_item ">
+                <a href="{{ site-menu.url }}" 
+                {% if site-menu.class %}
+                     class="{{ site-menu.class }}" 
+                {% endif %}
+                >{{ site-menu.name }}</a>
+            </li>
+    		{% endfor %}
+		</ul>
+
+   {% include page/company_info.html %}
+    </div>
+</div>
+
+<div class="clear"></div>
+<br>
